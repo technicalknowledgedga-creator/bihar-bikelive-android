@@ -40,7 +40,7 @@ class BikeLocationService : Service() {
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(result: LocationResult) {
                 val loc = result.lastLocation ?: return
-                sendLocationToFirestore(loc.latitude, loc.longitude, loc.speed * 3.6)
+                sendLocationToFirestore(loc.latitude, loc.longitude, loc.speed * 3.6f)
             }
         }
         startLocationUpdates()
